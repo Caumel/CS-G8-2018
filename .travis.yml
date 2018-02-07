@@ -1,26 +1,33 @@
 language: android
-jdk: oraclejdk8
 android:
-	components:
-        - tools
-        - platform-tools
-        - tools
+  components:
+  - build-tools-26.1.0
+  - android-26
+  - extra
+  - sys-img-armeabi-v7a-android-tv-l
+  - add-on
+  - extra
+before_install:
+- chmod +x gradlew
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  - "$HOME/.android/build-cache"
+notifications:
+  email: true
 
-        #Prueba
-		- build-tools-26.1.0
-		- android-26
-        - extra
-        
-        #Gradle
-        - ./gradlew build connectedCheck
-        - gradle build connectedCheck
-        
-        # Additional components
-        - extra-google-google_play_services
-        - extra-google-m2repository
-        - extra-android-m2repository
-        - addon-google_apis-google-26
-
-        script:
-           - ./gradlew clean rake:test
-
+deploy:
+  provider: releases
+  api_key:
+    secure: FaqDaJ+Ox4wH/y1ayarB/cTeInTPKeXpfT6s9Tg0VroEECbDtUb18xMjahswV0veDcRJNsGfRQh5umxCBnidcF+BsjfGbmnram9qyw2VTXERJ/UWkzEw9iylixfhaFRD/9S5KwrYI6xdwd7d1I9K8mYznrUaXtYwBJVJEX4I5Yx79MoCVgZ0mmC6733l/iuWW3HdSZAuFGTyexpSxI/aYDAgG5XipmF8aSj/gaBSzRoUOXhSDdSQSl+GU8B4M8DN2+Nyt183iqoX9xI946Qv/QTM2GBUk5Culn7g02XqbJbL2ONupAUFcblVLutliJYq/7PbByGaECbpSqNMpvnCfjHArfT5oZLwmqCJh4CBhl+v4r8VFD2SOijdstlbab1RiLHri9RvLt3ifQW0SBXFx/JQI6rDgUKFq4FUVA+m5TxnaSPchBsHTRQXJs289neNGZhX2hqKoL8hquGDSL8ZZuvLsdmCRtP5+fCZq4356pUQ/T8th2NWUI839Qwjg4riCKwDoKbl7UXYZBDsVi6AAMpdVwMr0X9krXxmVP/UCAwVvlxtuGWxIc1wtzwpNTOiI5DS/rfX86JkAcXonvBFfJPZoRq2C378YgHstnO3CQ8vc7GoZIN2E1fLXhpNK2vVlGCPjSRc0OjY8Gx8y8M3e1XDmAAQlMSwnOcsGxU8JoU=
+  file: android/build/outputs/apk/release/android-release-unsigned.apk
+  skip_cleanup: true
+  on:
+    repo: Caumel/CS-G8-2018
+    branch: master
+after_success:
+- sh magic.sh
