@@ -9,7 +9,6 @@ android:
         #Prueba
 		- build-tools-26.1.0
 		- android-26
-		- extra
         
         #Gradle
         - ./gradlew build connectedCheck
