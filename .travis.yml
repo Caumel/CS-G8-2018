@@ -17,6 +17,9 @@ cache:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
   - "$HOME/.android/build-cache"
+notifications:
+  email: true
+
 deploy:
   provider: releases
   api_key:
