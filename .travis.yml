@@ -9,6 +9,7 @@ android:
         #Prueba
 		- build-tools-26.1.0
 		- android-26
+        - extra
         
         #Gradle
         - ./gradlew build connectedCheck
@@ -19,4 +20,7 @@ android:
         - extra-google-m2repository
         - extra-android-m2repository
         - addon-google_apis-google-26
+
+        script:
+           - ./gradlew clean rake:test
 
