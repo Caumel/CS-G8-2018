@@ -1,16 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: "org.ajoberstar.grgit"
-
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath "org.ajoberstar:grgit:2.1.0"
-    }
-}
 
 android {
     compileSdkVersion 26
@@ -37,34 +25,4 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-}
-
-task push() {
-    doLast {
-        if (project.hasProperty('commit'))
-        {
-            def grgit = org.ajoberstar.grgit.Grgit.open(dir: '.')
-            grgit.add(patterns: ['.'], update : true)
-            grgit.add(patterns: ['.'], update : false)
-            grgit.commit(message : project.property('commit'), all : true)
-            grgit.push()
-            println 'Subiendo a git...'
-        }
-        else
-            System.err.pritln("Error. Introduzca un commit.")
-    }
-}
-
-task pull() {
-    doLast {
-        def grgit = org.ajoberstar.grgit.Grgit.open(dir: '.')
-        grgit.pull()
-    }
-}
-
-task commit() {
-    doLast {
-        def grgit = org.ajoberstar.grgit.Grgit.open(dir: '.')
-        grgit.commit(message: 'Committing my code.', amend: true)
-    }
 }

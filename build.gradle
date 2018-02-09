@@ -1,15 +1,19 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: "org.ajoberstar.grgit"
+apply plugin: 'java'
 
 buildscript {
     
     repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
         google()
         jcenter()
     }
     dependencies {
+        classpath "org.ajoberstar:grgit:2.1.0"
         classpath 'com.android.tools.build:gradle:3.0.1'
-        
-
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -22,6 +26,26 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+task push() {
+    doLast {
+        if (project.hasProperty('commit'))
+        {
+            def grgit = org.ajoberstar.grgit.Grgit.open(dir: '.')
+            grgit.add(patterns: ['.'], update : true)
+            grgit.add(patterns: ['.'], update : false)
+            grgit.commit(message : project.property('commit'), all : true)
+            grgit.push()
+            println 'Subiendo a git...'
+        }
+        else
+            System.err.pritln("Error. Introduzca una commit.")
+    }
 }
+
+task pull() {
+    doLast {
+        def grgit = org.ajoberstar.grgit.Grgit.open(dir: '.')
+        grgit.pull()
+    }
+}
+
