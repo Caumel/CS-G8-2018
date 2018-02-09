@@ -39,7 +39,6 @@ task clean(type: Delete) {
 }
 
 import org.ajoberstar.grgit.*
-import org.ajoberstar.grgit.auth.*
 
 task push() {
     doLast {
