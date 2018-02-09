@@ -44,7 +44,6 @@ task push() {
         {
             def grgit = org.ajoberstar.grgit.Grgit.open(dir: '.')
             grgit.add(patterns: ['.'], update : true)
-            grgit.add(patterns: ['.'], update : false)
             grgit.commit(message : project.property('commit'), all : true)
             grgit.push()
             println 'Subiendo a git...'
