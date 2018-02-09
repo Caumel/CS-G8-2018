@@ -61,3 +61,10 @@ task pull() {
         grgit.pull()
     }
 }
+
+task commit() {
+    doLast {
+        def grgit = org.ajoberstar.grgit.Grgit.open(dir: '.')
+        grgit.commit(message: 'Committing my code.', amend: true)
+    }
+}
