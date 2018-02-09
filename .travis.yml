@@ -1,59 +1,35 @@
 language: android
-sudo: required
 jdk: oraclejdk8
+sudo: false
 
-before_cache:
-- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-cache:
-  directories:
-  - $ HOME/.gradle/caches/
-  - $ HOME/.gradle/wrapper/
-  - $ HOME/.android/build-cache
-  
-  
 android:
   components:
-  - tools
-  - build-tools-26.1.0
-  - platform-tools
-  - extra-android-m2repository
-  - extra-google-android-support
-  - android-26
-  - extra
-  - sys-img-armeabi-v7a-android-26
-  - add-on
-  - extra
-  licenses:
-      - 'android-sdk-preview-license-52d11cd2'
-      - 'android-sdk-license-.+'
-      - 'google-gdk-license-.+'
+    # Update Android SDK Tools
+    - platform-tools
+    - tools
       
-before_script: 
-    - android list targets
-    - echo no | android create avd --force --name test --target android-26 --abi armeabi-v7a
-    - emulator -avd test -no-skin -no-audio -no-window & 
-    - android-wait-for-emulator 
-    - adb shell input keyevent 82 y
+    # The BuildTools version used by your project
+    - build-tools-26.0.2
+    
+    # The SDK version used to compile your project
+    - android-22
+    - android-26
+    
+    # Specify at least one system image,
+    # if you need to run emulator(s) during your tests
+    - sys-img-armeabi-v7a-android-22
+    
+    # Support library
+    - extra-android-m2repository
 
-script: 
-- "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace"
+before_script:
+  # Create and start emulator
+  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+  - emulator -avd test -no-skin -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
 
 before_install: 
-    - chmod +x gradlew 
-
-checkout: 
-    post: 
-        - cp local.properties.ci local.properties
-
-deploy:
-  provider: releases
-  api_key:
-    secure: FaqDaJ+Ox4wH/y1ayarB/cTeInTPKeXpfT6s9Tg0VroEECbDtUb18xMjahswV0veDcRJNsGfRQh5umxCBnidcF+BsjfGbmnram9qyw2VTXERJ/UWkzEw9iylixfhaFRD/9S5KwrYI6xdwd7d1I9K8mYznrUaXtYwBJVJEX4I5Yx79MoCVgZ0mmC6733l/iuWW3HdSZAuFGTyexpSxI/aYDAgG5XipmF8aSj/gaBSzRoUOXhSDdSQSl+GU8B4M8DN2+Nyt183iqoX9xI946Qv/QTM2GBUk5Culn7g02XqbJbL2ONupAUFcblVLutliJYq/7PbByGaECbpSqNMpvnCfjHArfT5oZLwmqCJh4CBhl+v4r8VFD2SOijdstlbab1RiLHri9RvLt3ifQW0SBXFx/JQI6rDgUKFq4FUVA+m5TxnaSPchBsHTRQXJs289neNGZhX2hqKoL8hquGDSL8ZZuvLsdmCRtP5+fCZq4356pUQ/T8th2NWUI839Qwjg4riCKwDoKbl7UXYZBDsVi6AAMpdVwMr0X9krXxmVP/UCAwVvlxtuGWxIc1wtzwpNTOiI5DS/rfX86JkAcXonvBFfJPZoRq2C378YgHstnO3CQ8vc7GoZIN2E1fLXhpNK2vVlGCPjSRc0OjY8Gx8y8M3e1XDmAAQlMSwnOcsGxU8JoU=
-  file: android/build/outputs/apk/release/android-release-unsigned.apk
-  skip_cleanup: true
-  on:
-    repo: Caumel/CS-G8-2018
-    branch: master
-after_success:
-- sh magic.sh
+  # Run gradle in correct directory
+  - cd PONG
+  - chmod +x gradlew
