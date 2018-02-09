@@ -31,5 +31,4 @@ before_script:
 
 before_install: 
   # Run gradle in correct directory
-  - cd PONG
   - chmod +x gradlew
