@@ -3,6 +3,7 @@ apply plugin: "org.ajoberstar.grgit"
 
 android {
     compileSdkVersion 26
+	buildToolsVersion "26.1.0"
     defaultConfig {
         applicationId "PongTest.app.G8.com.sprint1"
         minSdkVersion 14
