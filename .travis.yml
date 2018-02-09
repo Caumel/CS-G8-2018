@@ -30,6 +30,7 @@ android:
       - 'google-gdk-license-.+'
       
 before_script: 
+    - android list targets
     - echo no | android create avd --force --name test --target android-26 --abi armeabi-v7a
     - emulator -avd test -no-skin -no-audio -no-window & 
     - android-wait-for-emulator 
