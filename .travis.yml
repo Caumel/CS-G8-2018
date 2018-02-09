@@ -39,7 +39,7 @@ script:
 - "./gradlew clean build connectedCheck -PdisablePreDex --stacktrace"
 
 before_install: 
-    - chmod + x gradlew 
+    - chmod +x gradlew 
 
 checkout: 
     post: 
