@@ -46,7 +46,7 @@ task push() {
             grgit.add(patterns: ['.'], update : true)
             grgit.commit(message : project.property('commit'), all : true)
             grgit.push()
-            println 'Subiendo a git...'
+            println 'Subiendo a git..'
         }
         else
             System.err.pritln("Error. Introduzca un commit.")
