@@ -43,10 +43,9 @@ task push() {
         if (project.hasProperty('commit'))
         {
             def grgit = org.ajoberstar.grgit.Grgit.open(dir: '.')
-            grgit.add(patterns: ['.'], update : true)
             grgit.commit(message : project.property('commit'), all : true)
             grgit.push()
-            println 'Subiendo a git...'
+            println 'Subido a git correctamente'
         }
         else
             System.err.pritln("Error. Introduzca un commit.")
