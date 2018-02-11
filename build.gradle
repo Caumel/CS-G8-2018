@@ -45,7 +45,7 @@ task push() {
             def grgit = org.ajoberstar.grgit.Grgit.open(dir: '.')
             grgit.commit(message : project.property('commit'), all : true)
             grgit.push()
-            println 'Subido a git correctamente'
+            println 'Subido a git correctamente '
         }
         else
             System.err.pritln("Error. Introduzca un commit.")
