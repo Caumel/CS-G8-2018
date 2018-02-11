@@ -56,7 +56,7 @@ task push() {
 task pull() {
     doLast {
         def grgit = org.ajoberstar.grgit.Grgit.open(dir: '.')
-        println 'Actualizando repositorio local'
+        println 'Repositorio local actualizado correctamente'
         grgit.pull()
     }
 }
