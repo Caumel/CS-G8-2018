@@ -1,9 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply plugin: "org.ajoberstar.grgit"
-plugins {
- 
- id "org.sonarqube" version "2.6"
-}
+apply plugin: "org.sonarqube" version "2.6"
+
 
 buildscript {
     repositories {
