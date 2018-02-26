@@ -32,3 +32,17 @@ before_script:
 before_install: 
   # Run gradle in correct directory
   - chmod +x gradlew
+  
+addons:
+  sonarcloud:
+    organization: "your_organization_key"
+    token:
+      secure: "your_token_encrypted_with_travis_encrypt_tool"
+script:
+  - ./gradlew sonarqube
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+    - '$HOME/.gradle'
+    - '.gradle'
