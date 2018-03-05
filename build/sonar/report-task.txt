@@ -3,5 +3,5 @@ projectKey=CS-G8-2018
 serverUrl=https://sonarcloud.io
 serverVersion=7.1.0.36868
 dashboardUrl=https://sonarcloud.io/dashboard/index/CS-G8-2018
-ceTaskId=AWHSPCce1uc8gbLrNgN6
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWHSPCce1uc8gbLrNgN6
+ceTaskId=AWH2I2PAvD4nwDDaItO3
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWH2I2PAvD4nwDDaItO3

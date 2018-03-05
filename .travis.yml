@@ -32,12 +32,14 @@ before_script:
 before_install: 
   # Run gradle in correct directory
   - chmod +x gradlew
-  
+
+#gradlew sonarqube -Dsonar.organization=grubiopa-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=69147cfff9191e8d8d26e2b54be8d2ccd319b17f
+
 addons:
   sonarcloud:
-    organization: "your_organization_key"
+    organization: "grubiopa-github"
     token:
-      secure: "your_token_encrypted_with_travis_encrypt_tool"
+      secure: "69147cfff9191e8d8d26e2b54be8d2ccd319b17f"
 script:
   - ./gradlew sonarqube
 cache:
