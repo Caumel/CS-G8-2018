@@ -1,0 +1,119 @@
+BDD se escriben las pruebas antes de escribir el codigo fuente pero no
+unitarias sino que verifiquen que el comportamiento dle codigo es correcto
+desde el punto de vista de negocio y de ahi hacemos el código
+
+partiendo de la HU describimos las funcionalidades del codigo con un lenguaje
+tipico de BDD, semiformal (Para entenderlo tanto tecnicos como no)
+intervienen
+
+
+GHERKINS
+
+lenguaje complensible por humanos y ordenadores para describir
+funcionalidades describiendo el software sin describir implementacion 
+
+  "es": {
+    "and": [
+      "* ",
+      "Y ",
+      "E "
+    ],
+    "background": [
+      "Antecedentes"
+    ],
+    "but": [
+      "* ",
+      "Pero "
+    ],
+    "examples": [
+      "Ejemplos"
+    ],
+    "feature": [
+      "Característica"
+    ],
+    "given": [
+      "* ",
+      "Dado ",
+      "Dada ",
+      "Dados ",
+      "Dadas "
+    ],
+    "name": "Spanish",
+    "native": "español",
+    "scenario": [
+      "Escenario"
+    ],
+    "scenarioOutline": [
+      "Esquema del escenario"
+    ],
+    "then": [
+      "* ",
+      "Entonces "
+    ],
+    "when": [
+      "* ",
+      "Cuando "
+    ]
+  }
+
+
+
+#languaje: es
+
+Característica: Definir los atributos ancho, largo y velocidad en los ejes X e Y de la clase bola
+	Como desarrollador
+	Yo quiero definir los atributos ancho, largo y velocidad en los ejes X e Y de la clase bola
+	Para poder usar la bola
+	Escenario: Definir atributos de la clase bola
+		Dado que implementado el ancho, largo y la velocidad
+		Cuando defino atributos de la clase bola
+		Entonces puedo usar la bola
+
+
+#languaje: es
+
+Característica: Definir un movimiento de barras aleatorias
+	Yo quiero definir un movimiento de barras aleatorias
+	Para no tener una dificultad en el entorno
+	Escenario: Definir un movimiento aleatorio
+		Dado que he escrito un codigo
+		Cuando	implimento el moviemento aleatorio
+		Entonces las barras se mueven sin intervencion humana
+
+
+
+#languaje: es
+
+Característica: Crear pantalla de WIN
+	Yo quiero que se crear una pantalla de WIN
+	Para darme cuenta cuando he ganado o he aguantado x tiempo
+	Escenario: Crear una pantalla de WIN
+		Dado que he creado una pantalla
+		Cuando	implimento el mensaje de WIN
+		Entonces me doy cuenta de que he ganado
+
+#languaje: es
+
+Característica: Implementar rebote de la bola en la barra
+	Yo quiero que la pelota sea capaz de rebotar en la barra
+	Para poder jugar con los dos objetos
+	Escenario: Implementar rebote de la bola en la barra
+		Dado que he creado una clase bola y otra barra
+		Cuando	la bola y la barra colisiones
+		Entonces estos dos objetos deben rebotar
+
+#languaje: es
+
+Característica: Implementar un juego en android que mueva una pelota entre dos barras
+	Yo quiero un juego en android que mueva una bola entre dos barras 
+	Para poder jugar en el movil
+	Escenario: Implementar un juego en android que mueva una pelota entre dos barras
+		Dado que debo crear un juego
+		Cuando	implemento el juego
+		Entonces puedo jugar en el movil
+
+
+
+
+
+	
