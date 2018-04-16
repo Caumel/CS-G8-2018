@@ -1,5 +1,4 @@
-Feature: Definir los atributos ancho, largo y velocidad en los ejes X e Y de la clase bola
-	As a player I wanna move the ball
+Feature: As a player I wanna move the ball properly
 	Scenario: Definir atributos de la clase bola
 		Given the ball
 		When game start
