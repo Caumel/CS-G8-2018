@@ -1,27 +1,29 @@
-Feature: Realizar diversas acciones al visitar un video de youtube
-	Como usuario
-	Yo quiero poder visitar un video de youtube
-	Para poder realizar diversas acciones
+Feature: Make diverse actions when i visit a video on youtube
+	As user
+	I want to be able to visit a video on youtube
+	So that
     
-    Background: Visitar youtube
-        Given que he visitado youtube       
+    Background: Visit youtube
+        Given i have visited youtube       
             
-	Scenario: Pulsar boton expandir
-		When yo pulso el boton expandir
-		Then se amplia el video
+	Scenario: Press the expand button
+		When i press the expand button
+		Then the video is expanded
 
-	Scenario: Pulsar boton pause
-		When yo pulso el boton pause
-		Then se pausa el video
+	Scenario: Press the pause button
+		When i press the pause button
+		Then the video pauses
             
-    Scenario: Pulsar boton play
-		When yo pulso el boton play
-		Then se activa el video
+    Scenario: Press the play button
+		When i press the play button
+		Then the video turn on
  
-    Scenario: Pulsar boton mute
-		When yo pulso el boton mutear
-		Then se silencia el video
+    Scenario: Press the mute button
+		When i press the mute button
+		Then the video is silenced
         
-    Scenario: Pulsar el boton subtitulos
-		When pulso el boton de subtitulos
-		Then puedo leer los subtitulos
+    Scenario: Press the subtitles button
+		When press the subtitles button
+		Then i can read the subtitles
+        
+        

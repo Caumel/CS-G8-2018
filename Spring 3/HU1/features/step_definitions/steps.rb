@@ -1,44 +1,46 @@
-Given("que he visitado youtube") do
-  visit 'https://www.youtube.com/watch?v=0ohR6IvezOU' 
-  sleep(3)
+Given("i have visited youtube") do
+    visit 'https://www.youtube.com/watch?v=0ohR6IvezOU' 
+    sleep(3)
 end
 
-When("yo pulso el boton expandir") do
-  click_on(class: 'ytp-fullscreen-button ytp-button')
+When("i press the expand button") do
+    click_on(class: 'ytp-fullscreen-button ytp-button')
 end
 
-Then("se amplia el video") do
-  sleep (5)
+Then("the video is expanded") do
+    sleep (3)
 end
 
-When("yo pulso el boton pause") do
-  click_on(class: 'ytp-play-button ytp-button')
+When("i press the pause button") do
+    click_on(class: 'ytp-play-button ytp-button')
 end
 
-Then("se pausa el video") do
-  sleep (5)
+Then("the video pauses") do
+    sleep (3)
 end
 
-When("yo pulso el boton play") do
-  click_on(class: 'ytp-play-button ytp-button')
+When("i press the play button") do
+    click_on(class: 'ytp-play-button ytp-button')
+    sleep(3)
+    click_on(class: 'ytp-play-button ytp-button')
 end
 
-Then("se activa el video") do
-  sleep (5)
+Then("the video turn on") do
+    sleep (3)
 end
 
-When("yo pulso el boton mutear") do
-  click_on(class: 'ytp-mute-button ytp-button')
+When("i press the mute button") do
+    click_on(class: 'ytp-mute-button ytp-button')
 end
 
-Then("se silencia el video") do
-  sleep (5)
+Then("the video is silenced") do
+    sleep (5)
 end
 
-When("pulso el boton de subtitulos") do
-  click_on(class: 'ytp-subtitles-button ytp-button')
+When("press the subtitles button") do
+    click_on(class: 'ytp-subtitles-button ytp-button')
 end
 
-Then("puedo leer los subtitulos") do
-  sleep (5)
+Then("i can read the subtitles") do
+    sleep (5)
 end
