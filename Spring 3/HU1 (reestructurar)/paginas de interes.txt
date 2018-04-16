@@ -1,5 +1,0 @@
-https://cucumber.io/docs/reference/ruby
-https://www.swtestacademy.com/ruby-cucumber-capybara/
-https://github.com/teamcapybara/capybara#using-capybara-with-cucumber
-https://cucumber.io/docs/reference/browser-automation#selenium
-https://github.com/teamcapybara/capybara/issues/1361
