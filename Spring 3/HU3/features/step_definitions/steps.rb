@@ -1,27 +1,32 @@
-Given("the ball") do
-  pending # Write code here that turns the phrase above into concrete actions
+require 'calabash-android/calabash_steps'
+Given("the bat") do
+    sleep(1)
 end
 
 When("game start") do
-  pending # Write code here that turns the phrase above into concrete actions
+    sleep(2)
 end
 
-Then("I can move the ball up") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I can move the bat up from {int}:{int} to {int}:{int}") do |int, int2, int3, int4|
+    perform_action('drag', int , int3 , int2 , int4 , 20)
+    sleep(2)
 end
 
-Then("I can move the ball down") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I can move the bat down {int}:{int} to {int}:{int}") do |int, int2, int3, int4|
+    perform_action('drag', int , int3 , int2 , int4 , 20)
+    sleep(2)
 end
 
-Then("the ball doesn't move by its own") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("the bat doesn't move by its own") do
+    sleep(5)
 end
 
-Then("I can't move the ball to the left") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I can't move the bat to the left {int}:{int} to {int}:{int}") do |int, int2, int3, int4|
+    perform_action('drag', int , int3 , int2 , int4 , 20)
+    sleep(2)
 end
 
-Then("I can't move the ball to the right") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I can't move the bat to the right {int}:{int} to {int}:{int}") do |int, int2, int3, int4|
+    perform_action('drag', int , int3 , int2 , int4 , 20)
+    sleep(2)
 end
