@@ -37,10 +37,10 @@ Then("the video is silenced") do
     sleep (5)
 end
 
-When("press the subtitles button") do
-    click_on(class: 'ytp-subtitles-button ytp-button')
+When("press the settings button") do
+    click_on(class: 'ytp-button ytp-settings-button')
 end
 
-Then("i can read the subtitles") do
+Then("i can read the settings") do
     sleep (5)
 end

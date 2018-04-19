@@ -23,7 +23,7 @@ Feature: Make diverse actions when i visit a video on youtube
 		Then the video is silenced
         
     Scenario: Press the subtitles button
-		When press the subtitles button
-		Then i can read the subtitles
+		When press the settings button
+		Then i can read the settings
         
         
