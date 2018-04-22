@@ -47,7 +47,7 @@ addons:
 script:
   - ./gradlew sonarqube
   - cd Spring3/HU3/
-  - bundle exec calabash-android run ./Spring3/HU3/app-debug.apk
+  - bundle exec calabash-android run app-debug.apk
 cache:
   directories:
     - '$HOME/.m2/repository'
