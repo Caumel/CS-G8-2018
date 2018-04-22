@@ -1,0 +1,10 @@
+Las cosas están en app/src/androidTest, he usado de modelo lo del primer link.
+
+Links: 
+- https://github.com/cucumber/cucumber-jvm/tree/master/examples/android/android-studio/Cukeulator (Android y gradle, "Experimental")
+- https://github.com/cucumber/cucumber-jvm/tree/master/examples/java-gradle (solo va con Java no con Android)
+- https://github.com/cucumber/cucumber-jvm/tree/master/android (va con android pero solo con maven)
+- https://azevedorafaela.wordpress.com/2015/09/12/how-to-install-espresso-in-android-studio/
+
+No he conseguido hacer que vaya, no hay documentación que se entienda medianamente para nuestro caso.
+Es igual que la HU4 pero usando la aplicación entera, no solo la bola
