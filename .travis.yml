@@ -46,7 +46,7 @@ addons:
       secure: "69147cfff9191e8d8d26e2b54be8d2ccd319b17f"
 script:
   - ./gradlew sonarqube
-  - bundle exec calabash-android run /Spring3/HU3/app-debug.apk
+  - bundle exec calabash-android run ./Spring3/HU3/app-debug.apk
 cache:
   directories:
     - '$HOME/.m2/repository'
