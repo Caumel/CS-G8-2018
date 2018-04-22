@@ -137,4 +137,7 @@ public class Bat {
     }
 
 
+    public int getMovementState() {
+        return this.paddleMoving;
+    }
 }
