@@ -19,3 +19,8 @@ Feature: As a player I wanna play the game
         Given the game
         When I lose the game
         Then Print that you have lost
+
+    Scenario: Resume the game
+        Given the game stopped
+        When I start the game
+        Then the game resumes

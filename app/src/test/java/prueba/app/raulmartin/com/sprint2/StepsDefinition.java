@@ -105,6 +105,24 @@ public class StepsDefinition {
             assert (pong.getEstado() == "Has perdido");
         }
 
+        //5
+        @Given("^the game stopped$")
+        public void gameStopped() {
+            assert (pong.isPaused() == true);
+        }
+
+        @When("^I start the game$")
+        public void play() {
+            pong = new PongMotor( new PongActivity(),0,0 );
+            pong.resume();
+
+        }
+
+        @Then("^the game resumes")
+        public void resume() {
+            assert (pong.isPaused() == false);
+        }
+
 
 
 
