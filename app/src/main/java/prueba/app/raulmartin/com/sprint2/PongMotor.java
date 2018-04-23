@@ -289,6 +289,10 @@ public class PongMotor extends SurfaceView implements Runnable{
     public Bala getBullet() {
         return bullet;
     }
+
+    public String getEstado() {
+        return estado;
+    }
 }
 
 

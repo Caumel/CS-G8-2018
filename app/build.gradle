@@ -31,7 +31,6 @@ android {
         }
     }
 
-    buildToolsVersion '27.0.3'
     sourceSets {
         androidTest {
             assets.srcDirs = ['src/androidTest/assets']
@@ -46,19 +45,16 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    /*androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
-        androidTestCompile 'io.cucumber:cucumber-android:2.4.0'
-        androidTestCompile 'io.cucumber:cucumber-picocontainer:2.4.0'*/
-    // compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'junit:junit:4.12'
-    compile 'junit:junit:4.12'
-    testCompile 'io.cucumber:cucumber-java:2.4.0'
-    testCompile 'io.cucumber:cucumber-junit:2.4.0'
-    androidTestCompile 'com.android.support.test:runner:1.0.1'
-    androidTestCompile 'com.android.support:support-annotations:26.1.0'
+
+    implementation 'junit:junit:4.12'
+    implementation 'junit:junit:4.12'
+    testImplementation 'io.cucumber:cucumber-java:2.4.0'
+    testImplementation 'io.cucumber:cucumber-junit:2.4.0'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support:support-annotations:26.1.0'
     // <-- match with the support lib version
-    androidTestCompile 'info.cukes:cucumber-android:1.2.5@jar'
-    androidTestCompile 'info.cukes:cucumber-picocontainer:1.2.5'
+    androidTestImplementation 'info.cukes:cucumber-android:1.2.5@jar'
+    androidTestImplementation 'info.cukes:cucumber-picocontainer:1.2.5'
     //Runner
     androidTestCompile('com.android.support.test:runner:0.4.1') {
         exclude module: 'junit'
@@ -81,6 +77,6 @@ dependencies {
     androidTestCompile('info.cukes:cucumber-core:1.2.4') {
         exclude module: 'cucumber-jvm-deps'
     }
-    androidTestCompile('info.cukes:cucumber-jvm-deps:1.0.3') {
+    androidTestImplementation('info.cukes:cucumber-jvm-deps:1.0.3') {
     }
 }

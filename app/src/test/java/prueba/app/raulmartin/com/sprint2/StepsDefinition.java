@@ -64,8 +64,9 @@ public class StepsDefinition {
             assertTrue(bat.getY()==400);
         }
 
-        //Smoke Move Ball features
+        //Smoke Game features
 
+        //1
         @Given("^the game$")
         public void newGame() {
             pong = new PongMotor( new PongActivity(),0,0 );
@@ -82,16 +83,27 @@ public class StepsDefinition {
             assert (pong.isPaused() == true);
         }
 
+        //2
         @Then("^The ball is created$")
         public void ballCreated(){
             assert( pong.getBall() != null);
         }
 
+        //3
         @Then("^The bullet is created$")
         public void bulletCreated(){
             assert( pong.getBullet() != null);
         }
 
+        //4
+        @When("^I lose the game$")
+        public void lose() {
+
+        }
+        @Then("^Print that you have lost")
+        public void print() {
+            assert (pong.getEstado() == "Has perdido");
+        }
 
 
 
