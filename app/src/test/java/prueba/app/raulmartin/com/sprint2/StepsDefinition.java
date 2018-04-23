@@ -77,12 +77,25 @@ public class StepsDefinition {
             pong.pause();
 
         }
+        @Then("^The game stops")
+        public void moveStick() {
+            assert (pong.isPaused() == true);
+        }
 
-       /* @Given("^the game$")
-        public void game() {
-            pong = new PongMotor( new PongActivity(),0,0 );
-            pong.resume();
-        }*/
+        @Then("^The ball is created$")
+        public void ballCreated(){
+            assert( pong.getBall() != null);
+        }
+
+        @Then("^The bullet is created$")
+        public void bulletCreated(){
+            assert( pong.getBullet() != null);
+        }
+
+
+
+
+
 
 
 

@@ -54,6 +54,8 @@ public class PongMotor extends SurfaceView implements Runnable{
 
     //Numero máximo de balas, y el objeto bala
     private int maxBalas;
+
+
     private Bala bullet;
 
     //Estado del juego, para imprimir cuando has perdido
@@ -276,8 +278,18 @@ public class PongMotor extends SurfaceView implements Runnable{
     }
 
 
-
+    public boolean isPaused() {
+        return paused;
     }
+
+    public Ball getBall() {
+        return ball;
+    }
+
+    public Bala getBullet() {
+        return bullet;
+    }
+}
 
 
 

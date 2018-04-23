@@ -4,9 +4,13 @@ Feature: As a player I wanna play the game
         When I quit the game
     	Then The game stops
 
-	Scenario: Play the game
+	Scenario: Created the ball
 		Given the game
 		When game start
 		Then The ball is created
 
+	Scenario: Created the bullet
+    	Given the game
+    	When game start
+    	Then The bullet is created
 
