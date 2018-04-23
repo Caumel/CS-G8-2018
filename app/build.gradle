@@ -9,81 +9,21 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
-
-    packagingOptions {
-        exclude 'LICENSE.txt'
-    }
-
-    lintOptions {
-        abortOnError false
-    }
-
-    testOptions {
-        unitTests.returnDefaultValues = true
-    }
-
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    buildToolsVersion '27.0.3'
-    sourceSets {
-        androidTest {
-            assets.srcDirs = ['src/androidTest/assets']
-        }
-    }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    /*androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
-        androidTestCompile 'io.cucumber:cucumber-android:2.4.0'
-        androidTestCompile 'io.cucumber:cucumber-picocontainer:2.4.0'*/
-    // compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'junit:junit:4.12'
-    compile 'junit:junit:4.12'
-    testCompile 'io.cucumber:cucumber-java:2.4.0'
-    testCompile 'io.cucumber:cucumber-junit:2.4.0'
-    androidTestCompile 'com.android.support.test:runner:1.0.1'
-    androidTestCompile 'com.android.support:support-annotations:26.1.0'
-    // <-- match with the support lib version
-    androidTestCompile 'info.cukes:cucumber-android:1.2.5@jar'
-    androidTestCompile 'info.cukes:cucumber-picocontainer:1.2.5'
-    //Runner
-    androidTestCompile('com.android.support.test:runner:0.4.1') {
-        exclude module: 'junit'
-    }
-    //Cucumber
-    androidTestCompile('info.cukes:cucumber-junit:1.1.4') {
-        exclude module: 'cucumber-jvm-deps'
-        exclude module: 'cucumber-core'
-        exclude group: 'org.hamcrest', module: 'hamcrest-core'
-    }
-    androidTestCompile('info.cukes:cucumber-android:1.2.4@jar') {
-        exclude module: 'cucumber-jvm-deps'
-    }
-    androidTestCompile('info.cukes:cucumber-picocontainer:1.2.5') {
-        exclude module: 'cucumber-core'
-        exclude module: 'cucumber-jvm-deps'
-    }
-    androidTestCompile('info.cukes:cucumber-jvm:1.2.4') {
-    }
-    androidTestCompile('info.cukes:cucumber-core:1.2.4') {
-        exclude module: 'cucumber-jvm-deps'
-    }
-    androidTestCompile('info.cukes:cucumber-jvm-deps:1.0.3') {
-    }
 }

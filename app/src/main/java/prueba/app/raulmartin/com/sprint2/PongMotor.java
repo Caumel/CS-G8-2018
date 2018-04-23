@@ -275,9 +275,6 @@ public class PongMotor extends SurfaceView implements Runnable{
         return true;
     }
 
-    public boolean isPaused() {
-        return paused;
-    }
 
 
     }
